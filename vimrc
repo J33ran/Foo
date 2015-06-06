@@ -82,7 +82,7 @@ autocmd! bufwritepost .vimrc source % " reload the vimrc after changes
 "better copy paste
 set pastetoggle=<F2>
 set clipboard=unnamed
-let mapleader=","
+"let mapleader=","
 
 " NerdTree
 let g:NERDTreeSortDirs=1        " NerdTree sort dirs.
@@ -114,4 +114,17 @@ cnoremap <C-N>    <Down>
 
 " Recall previous (older) command-line
 cnoremap <C-P>    <Up> 
+
+set statusline=%t       "tail of the filename
+"set statusline+=[%{&ff}] "file format
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+"set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+"set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+"set statusline+=%=-      "left/right separator
+"set statusline+=%-
+
 

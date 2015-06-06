@@ -7,6 +7,15 @@
 let b:did_ftplugin = 1
 
 
+" VirtualEnv status linie
+let s:vstatus=&statusline
+set statusline=[%{virtualenv#statusline()}]
+let &statusline=&statusline.s:vstatus
+
+"if !empty(s:vstatus)
+"endif
+
+
 " Pyflakes
 let g:pyflakes_use_quickfix = 0 " Not to use quickwindow to show fixes
 
@@ -24,10 +33,11 @@ map <leader>td <Plug>TaskList
 let g:pep8_map='<leader>8'          " Source code consistency 
 
 "Pytho_pydoc
-let g:pydoc_open_cmd = 'tabnew' 
+"K is a key for documentation
+let g:pydoc_open_cmd = 'tabnew'
 let g:pydoc_cmd = 'python -m pydoc' 
 
-set makeprg=python3.4\ %
+set makeprg=python\ -m\ doctest\ %
 
 "gf (goto file) in Python source code to open an imported Python file.{;w
 python << EOF
@@ -41,16 +51,3 @@ for p in sys.path:
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
 
-" Add the virtualenv's site-packages to vim path
-"py << EOF
-"import os.path
-"import sys
-"import vim
-"if 'VIRTUAL_ENV' in os.environ:
-"    project_base_dir = os.environ['VIRTUAL_ENV']
-"    sys.path.insert(0, project_base_dir)
-"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"    execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
-"
