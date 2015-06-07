@@ -1,16 +1,21 @@
 
 " Only do this when not done yet for this buffer
-"    if exists("b:did_ftplugin")
-"      finish
-"    endif
+if !exists("g:virtualenvstatus")
+  let g:virtualenvstatus=&statusline
+endif
 
-let b:did_ftplugin = 1
+
+
+" Only do this when not done yet for this buffer
+if b:did_ftplugin==2
+    finish
+endif
+
 
 
 " VirtualEnv status linie
-let s:vstatus=&statusline
-set statusline=[%{virtualenv#statusline()}]
-let &statusline=&statusline.s:vstatus
+setlocal statusline=[%{virtualenv#statusline()}]
+let &statusline=&statusline.g:virtualenvstatus
 
 "if !empty(s:vstatus)
 "endif
@@ -37,7 +42,7 @@ let g:pep8_map='<leader>8'          " Source code consistency
 let g:pydoc_open_cmd = 'tabnew'
 let g:pydoc_cmd = 'python -m pydoc' 
 
-set makeprg=python\ -m\ doctest\ %
+setlocal makeprg=python\ -m\ doctest\ %
 
 "gf (goto file) in Python source code to open an imported Python file.{;w
 python << EOF
@@ -51,3 +56,5 @@ for p in sys.path:
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
 
+
+let b:did_ftplugin = 2
