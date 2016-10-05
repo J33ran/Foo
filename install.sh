@@ -8,7 +8,7 @@ git clone https://github.com/mitechie/pyflakes-pathogen.git bundle/pyflakes
 git clone https://github.com/sjl/gundo.vim.git bundle/gundo
 git clone https://github.com/fs111/pydoc.vim.git bundle/pydoc
 git clone https://github.com/vim-scripts/pep8.git bundle/pep8
-git clone https://github.com/davidhalter/jedi-vim.git bundle/jedi
+git clone --recursive https://github.com/davidhalter/jedi-vim.git bundle/jedi
 git clone https://github.com/jmcantrell/vim-virtualenv bundle/virtualenv
 git clone https://github.com/vim-scripts/TaskList.vim.git bundle/tasklist
 git clone https://github.com/vim-scripts/The-NERD-tree.git bundle/nerdtree

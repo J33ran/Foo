@@ -40,12 +40,12 @@ let g:pep8_map='<leader>8'          " Source code consistency
 "Pytho_pydoc
 "K is a key for documentation
 let g:pydoc_open_cmd = 'tabnew'
-let g:pydoc_cmd = 'python -m pydoc' 
+let g:pydoc_cmd = 'python3 -m pydoc' 
 
-setlocal makeprg=python\ -m\ doctest\ %
+setlocal makeprg=python3\ -m\ doctest\ %
 
 "gf (goto file) in Python source code to open an imported Python file.{;w
-python << EOF
+python3 << EOF
 import os
 import sys
 import vim
