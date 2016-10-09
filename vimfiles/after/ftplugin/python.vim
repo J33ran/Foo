@@ -37,9 +37,9 @@ let g:jedi#show_call_signatures=0
 map <leader>td <Plug>TaskList
 let g:pep8_map='<leader>8'          " Source code consistency 
 
-"Pytho_pydoc
+"python_pydoc
 "K is a key for documentation
-let g:pydoc_open_cmd = 'tabnew'
+let g:pydoc_open_cmd = 'vsplit'
 let g:pydoc_cmd = 'python3 -m pydoc' 
 
 setlocal makeprg=python3\ -m\ doctest\ %
